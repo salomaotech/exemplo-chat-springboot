@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chat - www.salomaotech.com</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+    <body>
+
+        <div class="container">
+
+            <!-- exibe as mensagens -->
+            <div class="container-mensagens">
+
+                <tr th:each="mensagem : ${mensagens}">
+
+                <div class="mensagem-recebida">
+                    <td class="" th:text="${mensagem.apelido}"></td>
+                    <td class="" th:text="${mensagem.mensagem}"></td>
+                </div>
+
+                </tr>
+
+            </div>
+
+            <!-- campo que envia as mensagens -->
+            <div class="container-enviar">
+
+                <!-- formulário de envio -->
+                <form method="POST" th:action="@{/enviar}">
+
+                    <div class="container-separador">
+                        <label>Apelido:</label>
+                        <input type="text" placeholder="Apelido" name="apelido">
+                    </div>
+
+                    <div class="container-separador">
+                        <label>Mensagem:</label>
+                        <input type="text" placeholder="Mensagem" name="mensagem">
+                    </div>
+
+                    <div class="container-separador">
+                        <input type="submit" value="Enviar">
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
