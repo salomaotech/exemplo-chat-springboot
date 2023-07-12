@@ -2,7 +2,6 @@ package com.salomaotech.chat.controller;
 
 import com.salomaotech.chat.model.Mensagem;
 import com.salomaotech.chat.model.MensagemRepository;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +14,6 @@ public class MensagensController {
 
     @Autowired
     private MensagemRepository mensagemRepository;
-
-    private static final List<Long> novasMensagensId = new ArrayList();
 
     @PostMapping("/enviar")
     public void enviarMensagem(@RequestParam("apelido") String apelidoParametro, @RequestParam("mensagem") String mensagemParametro) {
@@ -35,24 +32,7 @@ public class MensagensController {
     @GetMapping("/carregar")
     public List<Mensagem> listarMensagens() {
 
-        int contador = 0;
-
-        List<Mensagem> mensagensDoRepositorio = mensagemRepository.findAll();
-        List<Mensagem> retorno = new ArrayList();
-
-        for (Mensagem mensagem : mensagensDoRepositorio) {
-
-            /* checa se o ID da mensagem já foi carregado */
-            if (!novasMensagensId.contains(mensagem.getId())) {
-
-                novasMensagensId.add(mensagem.getId());
-                
-
-            }
-
-        }
-
-        return retorno;
+        return mensagemRepository.findAll();
 
     }
 
