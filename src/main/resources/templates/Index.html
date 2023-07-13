@@ -5,38 +5,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="estilo.css">
-        <script src="code.jquery.com_jquery-3.7.0.min.js"></script>
     </head>
     <body>
 
-        <div class="container">
+        <div class="">
 
-            <!-- exibe as mensagens -->
-            <div class="container-mensagens" id="mensagens-lista"></div>
+            <div class="">
+                <input type="text" placeholder="Apelido" name="apelido">
+            </div>
 
-            <!-- campo que envia as mensagens -->
-            <div class="container-enviar">
-
-                <div class="container-separador">
-                    <label>Apelido:</label>
-                    <input type="text" placeholder="Apelido" id="apelido">
-                </div>
-
-                <div class="container-separador">
-                    <label>Mensagem:</label>
-                    <input type="text" placeholder="Mensagem" id="mensagem">
-                </div>
-
-                <div class="container-separador">
-                    <input type="submit" value="Enviar" id="botao-enviar-mensagem">
-                </div>
-
+            <div class="">
+                <input type="submit" value="Entrar na sala">
             </div>
 
         </div>
-
-        <!-- carregar lógica de envio e recebimento de mensagens via ajax -->
-        <script src="ajax.js"></script>
 
     </body>
 </html>

@@ -15,4 +15,12 @@ public class ViewController {
 
     }
 
+    @GetMapping("/chat")
+    public ModelAndView exibirChat() {
+
+        ModelAndView view = new ModelAndView("Chat");
+        return view;
+
+    }
+
 }
