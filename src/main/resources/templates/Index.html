@@ -8,15 +8,23 @@
     </head>
     <body>
 
-        <div class="">
+        <div class="chat-login">
 
-            <div class="">
-                <input type="text" placeholder="Apelido" name="apelido">
-            </div>
+            <form method="POST" th:action="@{/logar}">
 
-            <div class="">
-                <input type="submit" value="Entrar na sala">
-            </div>
+                <div class="chat-login-logo">
+                    Chat - www.salomaotech.com
+                </div>
+
+                <div class="chat-login-apelido">
+                    <input type="text" placeholder="Apelido" name="apelido">
+                </div>
+
+                <div class="chat-login-entrar">
+                    <input type="submit" value="Entrar na sala">
+                </div>
+
+            </form>
 
         </div>
 

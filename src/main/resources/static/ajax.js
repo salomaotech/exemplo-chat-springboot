@@ -15,8 +15,6 @@ $(document).ready(function () {
         // envia a mensagem
         $.post("/enviar", {apelido: apelido, mensagem: mensagem}, function () {
 
-
-
             // desabilita a edição do apelido
             $("#apelido").prop("disabled", true);
 
@@ -33,7 +31,7 @@ $(document).ready(function () {
 
                 if (!mensagensId.includes(mensagens[chave].id)) {
 
-                    $("#mensagens-lista").append("<p class='mensagem-recebida'>" + mensagens[chave].apelido + " : " + mensagens[chave].mensagem + "</p>");
+                    $("#mensagens-lista").append("<p class='chat-mensagem-recebida'>" + mensagens[chave].apelido + " : " + mensagens[chave].mensagem + "</p>");
                     mensagensId.push(mensagens[chave].id);
 
                 }
@@ -44,10 +42,14 @@ $(document).ready(function () {
 
     }
 
-    // adiciona evento ao clicar no botão para enviar a mensagem
-    $("#botao-enviar-mensagem").on("click", function () {
+    // envia com enter
+    $("#mensagem").keypress(function (e) {
 
-        enviarMensagem();
+        if (e.which === 13) {
+
+            enviarMensagem();
+
+        }
 
     });
 

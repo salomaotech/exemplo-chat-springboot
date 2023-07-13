@@ -9,27 +9,18 @@
     </head>
     <body>
 
-        <div class="container">
+        <!-- campo de apelido oculto -->
+        <input type="hidden" id="apelido" th:value="${param.apelido}">
+
+        <div class="chat-container">
 
             <!-- exibe as mensagens -->
-            <div class="container-mensagens" id="mensagens-lista"></div>
+            <div class="chat-container-mensagens" id="mensagens-lista"></div>
 
             <!-- campo que envia as mensagens -->
             <div class="container-enviar">
 
-                <div class="container-separador">
-                    <label>Apelido:</label>
-                    <input type="text" placeholder="Apelido" id="apelido">
-                </div>
-
-                <div class="container-separador">
-                    <label>Mensagem:</label>
-                    <input type="text" placeholder="Mensagem" id="mensagem">
-                </div>
-
-                <div class="container-separador">
-                    <input type="submit" value="Enviar" id="botao-enviar-mensagem">
-                </div>
+                <input type="text" placeholder="Mensagem" id="mensagem">
 
             </div>
 
